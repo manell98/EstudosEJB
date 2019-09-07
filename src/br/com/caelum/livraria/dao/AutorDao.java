@@ -2,6 +2,7 @@ package br.com.caelum.livraria.dao;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,17 +14,24 @@ public class AutorDao {
 
 	@PersistenceContext
 	private EntityManager em;
+	
+	private DAO<Autor> autorDao;
+	
+	@PostConstruct
+	void init() {
+		this.autorDao = new DAO<Autor>(this.em, Autor.class);
+	}
 
 	public void salva(Autor autor) {
-		this.em.persist(autor);
+		this.autorDao.adiciona(autor);
 	}
 	
 	public List<Autor> todosAutores() {
-		return this.em.createQuery("select a from Autor a", Autor.class).getResultList();
+		return this.autorDao.listaTodos();
 	}
 
 	public Autor buscaPelaId(Integer autorId) {
-		return this.em.find(Autor.class, autorId);
+		return this.autorDao.buscaPorId(autorId);
 	}
 	
 }
