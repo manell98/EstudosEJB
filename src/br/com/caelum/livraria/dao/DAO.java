@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 
+import br.com.caelum.livraria.modelo.Usuario;
+
 public class DAO<T> {
 	
 	private final Class<T> classe;	
@@ -64,5 +66,5 @@ public class DAO<T> {
 
 		return lista;
 	}
-
+	
 }
