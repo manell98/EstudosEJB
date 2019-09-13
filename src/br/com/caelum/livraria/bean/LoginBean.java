@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.login;
+package br.com.caelum.livraria.bean;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -6,8 +6,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.caelum.livraria.bean.MenuBean;
 import br.com.caelum.livraria.dao.UsuarioDao;
+import br.com.caelum.livraria.login.UsuarioLogadoBean;
 import br.com.caelum.livraria.modelo.Usuario;
 
 @Named 

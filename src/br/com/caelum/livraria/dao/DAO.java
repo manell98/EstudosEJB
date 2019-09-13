@@ -67,4 +67,14 @@ public class DAO<T> {
 		return lista;
 	}
 	
+	public Usuario buscaPeloLogin(String login) {		
+		try {		
+			return this.em
+					.createQuery("select u from Usuario u where u.login=:pLogin", Usuario.class)
+					.setParameter("pLogin", login).getSingleResult();		
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
 }
