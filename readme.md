@@ -1,1 +1,1 @@
-## Projeto Livraria: JSF - EJB - Wildfly - Alura
+## Projeto Livraria: JSF - EJB - Wildfly
